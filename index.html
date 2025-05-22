@@ -3,67 +3,407 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EVI TV - Chaîne congolaise de divertissement et d'information</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="description" content="EVI TV - La première chaîne de télévision congolaise d'information et de divertissement. Regardez en direct, films congolais, débats politiques et émissions culturelles.">
+    <title>EVI TV | La chaîne congolaise leader en information et divertissement</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="icon" href="assets/images/logo.jpg" type="image/png">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsMediaOrganization",
+      "name": "EVI TV",
+      "alternateName": "Eagle Vision Install",
+      "url": "https://www.evitv.cd",
+      "logo": "https://www.evitv.cd/assets/images/logo.jpg",
+      "sameAs": [
+        "https://facebook.com/evitv",
+        "https://twitter.com/evitv",
+        "https://youtube.com/evitv",
+        "https://instagram.com/evitv",
+        "https://tiktok.com/@evitv"
+      ]
+    }
+    </script>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="images/logo.png" alt="EVI TV Logo">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="direct.html">Direct</a></li>
-                <li><a href="programmes.html">Programmes</a></li>
-                <li><a href="vod.html">VOD</a></li>
-                <li><a href="about.html">À propos</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section class="hero">
-            <h1>Bienvenue sur EVI TV</h1>
-            <p>Votre chaîne d'information et de divertissement 24h/24</p>
-            <a href="direct.html" class="btn">Regarder en Direct</a>
-        </section>
-
-        <section class="live-player">
-            <h2>En direct maintenant</h2>
-            <video id="evi-live" class="video-js" controls preload="auto" width="100%" height="500px" data-setup='{}'>
-                <source src="https://example.com/evitv/live.m3u8" type="application/x-mpegURL">
-                Votre navigateur ne supporte pas la lecture en direct.
-            </video>
-        </section>
-
-        <section class="programs">
-            <h2>Nos Programmes</h2>
-            <div class="program-grid">
-                <div class="program-card">
-                    <h3>Journal Télévisé</h3>
-                    <p>20h00 - 21h00</p>
-                </div>
-                <div class="program-card">
-                    <h3>Divertissement</h3>
-                    <p>21h30 - 23h00</p>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <img src="assets/images/logo.jpg" alt="EVI TV Logo" width="180" loading="lazy">
+                </a>
+                
+                <nav class="main-nav">
+                    <ul>
+                        <li class="active"><a href="index.html">Accueil</a></li>
+                        <li><a href="live.html">Direct</a></li>
+                        <li><a href="schedule.html">Programmes</a></li>
+                        <li><a href="vod.html">VOD</a></li>
+                        <li><a href="about.html">À propos</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <a href="https://api.whatsapp.com/send?phone=243812345678" class="btn btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <div class="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </div>
                 </div>
             </div>
-            <a href="programmes.html" class="btn">Voir toute la grille</a>
-        </section>
-    </main>
+        </div>
+    </header>
 
-    <footer>
-        <p>&copy; 2024 EVI TV. Tous droits réservés.</p>
-        <div class="social-links">
-            <a href="https://youtube.com/evitv" target="_blank">YouTube</a>
-            <a href="https://tiktok.com/@evitvinternational" target="_blank">TikTok</a>
+    <!-- Hero Section with Breaking News Ticker -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="container">
+                <h1>EVI TV - La référence médiatique congolaise</h1>
+                <p>Information fiable, divertissement de qualité et culture congolaise 24h/24</p>
+                <div class="hero-buttons">
+                    <a href="live.html" class="btn btn-primary">
+                        <i class="fas fa-play"></i> Regarder en direct
+                    </a>
+                    <a href="schedule.html" class="btn btn-outline">
+                        <i class="fas fa-tv"></i> Voir la programmation
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Preview Section with Real Schedule -->
+    <section class="live-preview">
+        <div class="container">
+            <div class="section-header">
+                <h2>En direct maintenant</h2>
+                <div class="live-stats">
+                    <span class="viewers"><i class="fas fa-eye"></i> 24,532 spectateurs</span>
+                    <a href="schedule.html" class="see-all">Grille complète</a>
+                </div>
+            </div>
+            
+            <div class="live-container">
+                <div class="video-container">
+                    <video id="preview-player" class="video-js vjs-default-skin" controls preload="auto" width="100%" height="auto"
+                        poster="assets/images/live-poster.jpg" data-setup='{"fluid": true}'>
+                        <source src="https://stream.berosat.live:19360/evi-tv/evi-tv.m3u8" type="application/x-mpegURL">
+                        <p class="vjs-no-js">
+                            Pour voir ce contenu, activez JavaScript ou envisagez de passer à un navigateur web qui
+                            <a href="https://videojs.com/html5-video-support/" target="_blank">supporte HTML5 video</a>
+                        </p>
+                    </video>
+                    <div class="live-actions">
+                        <button class="btn btn-sm btn-primary" id="fullscreen-btn">
+                            <i class="fas fa-expand"></i> Plein écran
+                        </button>
+                        <button class="btn btn-sm btn-secondary" id="quality-btn">
+                            <i class="fas fa-cog"></i> Qualité
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="current-program">
+                    <h3>En ce moment</h3>
+                    <div class="program-info">
+                        <div class="program-time">20:00 - 21:00</div>
+                        <div class="program-title">Journal Télévisé EVI</div>
+                        <div class="program-desc">Avec les présentateurs Sarah Makambo et Jacques Kimbangu. Au sommaire : Analyse des réformes économiques et reportage exclusif sur l'industrie minière au Katanga.</div>
+                        <div class="program-meta">
+                            <span class="program-presenters">
+                                <i class="fas fa-microphone"></i> Sarah Makambo, Jacques Kimbangu
+                            </span>
+                            <a href="#" class="program-share">
+                                <i class="fas fa-share-alt"></i> Partager
+                            </a>
+                        </div>
+                    </div>
+                    <div class="next-program">
+                        <h4>À suivre</h4>
+                        <div class="program-info">
+                            <div class="program-time">21:00 - 22:30</div>
+                            <div class="program-title">Grand Débat: Les enjeux des élections 2026</div>
+                            <div class="program-guests">
+                                <i class="fas fa-users"></i> Invités: Pr. Marcel Ntumba (politologue), Mme. Léonie Kabasele (opposition), M. Didier Mbenga (majorité)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section with Actual EVI TV Shows -->
+    <section class="programs-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nos émissions phares</h2>
+                <a href="schedule.html" class="see-all">Toutes les émissions</a>
+            </div>
+            
+            <div class="programs-grid">
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="assets/images/journal-evi.jpg" alt="Journal Télévisé EVI" loading="lazy">
+                        <div class="program-category">Information</div>
+                        <div class="program-live-badge">EN DIRECT</div>
+                    </div>
+                    <div class="program-details">
+                        <h3>Journal Télévisé EVI</h3>
+                        <p><i class="far fa-clock"></i> Quotidien à 20h00</p>
+                        <p class="program-description">Le journal le plus regardé de RDC avec analyse approfondie et reportages exclusifs.</p>
+                        <div class="program-actions">
+                            <a href="live.html" class="btn btn-secondary">
+                                <i class="fas fa-play"></i> Regarder
+                            </a>
+                            <a href="#" class="btn btn-link">
+                                <i class="far fa-bell"></i> Rappel
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="assets/images/congo-culture.jpg" alt="Congo Culture" loading="lazy">
+                        <div class="program-category">Culture</div>
+                    </div>
+                    <div class="program-details">
+                        <h3>Congo Culture</h3>
+                        <p><i class="far fa-clock"></i> Mercredi à 18h30</p>
+                        <p class="program-description">Découverte du patrimoine culturel congolais à travers des documentaires primés.</p>
+                        <div class="program-actions">
+                            <a href="vod.html" class="btn btn-secondary">
+                                <i class="fas fa-play"></i> Replay
+                            </a>
+                            <a href="#" class="btn btn-link">
+                                <i class="far fa-bell"></i> Rappel
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="assets/images/ndombolo-night.jpg" alt="Ndombolo Night" loading="lazy">
+                        <div class="program-category">Divertissement</div>
+                    </div>
+                    <div class="program-details">
+                        <h3>Ndombolo Night</h3>
+                        <p><i class="far fa-clock"></i> Samedi à 21h00</p>
+                        <p class="program-description">L'émission musicale qui fait danser toute l'Afrique avec les stars de la rumba et ndombolo.</p>
+                        <div class="program-actions">
+                            <a href="vod.html" class="btn btn-secondary">
+                                <i class="fas fa-play"></i> Replay
+                            </a>
+                            <a href="#" class="btn btn-link">
+                                <i class="fas fa-ticket-alt"></i> Billetterie
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Actual News Section -->
+    <section class="news-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Actualités récentes</h2>
+                <a href="news.html" class="see-all">Toute l'actualité</a>
+            </div>
+            
+            <div class="news-grid">
+                <article class="news-card">
+                    <div class="news-image">
+                        <img src="assets/images/news-can2025.jpg" alt="CAN 2025" loading="lazy">
+                        <div class="news-category">Sports</div>
+                    </div>
+                    <div class="news-content">
+                        <time datetime="2025-05-20"><i class="far fa-calendar-alt"></i> 20 Mai 2025</time>
+                        <h3><a href="#">CAN 2025: Les Léopards dominent leur groupe après une victoire historique</a></h3>
+                        <p>L'équipe nationale de RDC s'impose 3-1 face au Maroc avec un doublé de Gaël Kakuta. Analyse technique et réactions des joueurs.</p>
+                        <a href="#" class="news-link">Lire la suite <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <article class="news-card">
+                    <div class="news-image">
+                        <img src="assets/images/news-economy.jpg" alt="Réformes économiques" loading="lazy">
+                        <div class="news-category">Économie</div>
+                    </div>
+                    <div class="news-content">
+                        <time datetime="2025-05-18"><i class="far fa-calendar-alt"></i> 18 Mai 2025</time>
+                        <h3><a href="#">La RDC parmi les 10 économies africaines à plus forte croissance en 2025</a></h3>
+                        <p>Selon le FMI, le PIB congolais devrait croître de 8,5% cette année, porté par les secteurs minier et agricole.</p>
+                        <a href="#" class="news-link">Lire la suite <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <article class="news-card">
+                    <div class="news-image">
+                        <img src="assets/images/news-culture.jpg" alt="Festival culturel" loading="lazy">
+                        <div class="news-category">Culture</div>
+                    </div>
+                    <div class="news-content">
+                        <time datetime="2025-05-15"><i class="far fa-calendar-alt"></i> 15 Mai 2025</time>
+                        <h3><a href="#">Kinshasa accueille le 10e Festival Panafricain de Cinéma</a></h3>
+                        <p>45 films en compétition dont 12 productions congolaises. EVI TV diffuse en exclusivité les cérémonies d'ouverture et de clôture.</p>
+                        <a href="#" class="news-link">Lire la suite <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Coverage Section -->
+    <section class="special-coverage">
+        <div class="container">
+            <h2>Dossiers spéciaux</h2>
+            <div class="coverage-grid">
+                <a href="#" class="coverage-item">
+                    <img src="assets/images/elections-2026.jpg" alt="Élections 2026" loading="lazy">
+                    <div class="coverage-content">
+                        <h3>Élections 2026: Le grand décryptage</h3>
+                        <p>Notre série d'enquêtes et analyses sur les préparatifs électoraux</p>
+                        <span class="btn btn-outline">Explorer</span>
+                    </div>
+                </a>
+                <a href="#" class="coverage-item">
+                    <img src="assets/images/rdc-tech.jpg" alt="Tech en RDC" loading="lazy">
+                    <div class="coverage-content">
+                        <h3>L'essor technologique congolais</h3>
+                        <p>Portraits des startups qui révolutionnent le pays</p>
+                        <span class="btn btn-outline">Découvrir</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners-section">
+        <div class="container">
+            <h3>Nos partenaires officiels</h3>
+            <div class="partners-grid">
+                <img src="assets/images/partner-airtel.png" alt="Airtel" loading="lazy">
+                <img src="assets/images/partner-orange.png" alt="Orange" loading="lazy">
+                <img src="assets/images/partner-rawbank.png" alt="Rawbank" loading="lazy">
+                <img src="assets/images/partner-societe.png" alt="Société Générale" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer with Enhanced Content -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="assets/images/logo.jpg" alt="EVI TV Logo" width="160" loading="lazy">
+                    <p>EVI TV (Eagle Vision Install) est la chaîne de télévision congolaise leader depuis 2013. Nous diffusons 24h/24 des programmes d'information, de divertissement et culturels en français et lingala.</p>
+                    
+                    <div class="app-download">
+                        <p>Téléchargez notre application:</p>
+                        <a href="#" class="app-btn">
+                            <img src="assets/images/google-play.png" alt="Google Play" loading="lazy">
+                        </a>
+                        <a href="#" class="app-btn">
+                            <img src="assets/images/app-store.png" alt="App Store" loading="lazy">
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="live.html">Direct TV</a></li>
+                        <li><a href="schedule.html">Grille des programmes</a></li>
+                        <li><a href="vod.html">Vidéos à la demande</a></li>
+                        <li><a href="about.html">À propos de EVI TV</a></li>
+                        <li><a href="contact.html">Contactez-nous</a></li>
+                        <li><a href="advertising.html">Publicité</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Nous contacter</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Avenue de la Télévision N°45, Gombe, Kinshasa, RDC</li>
+                        <li><i class="fas fa-phone"></i> +243 81 234 5678 (WhatsApp)</li>
+                        <li><i class="fas fa-envelope"></i> contact@evitv.cd</li>
+                        <li><i class="fas fa-clock"></i> 24h/24 - 7j/7</li>
+                    </ul>
+                    
+                    <div class="social-links">
+                        <a href="https://facebook.com/evitv" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/evitv" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://youtube.com/evitv" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://instagram.com/evitv" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://tiktok.com/@evitv" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Abonnez-vous pour recevoir nos dernières actualités et programmes directement dans votre boîte email.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Votre adresse email" required>
+                        <button type="submit" class="btn btn-primary">S'abonner</button>
+                    </form>
+                    <div class="payment-methods">
+                        <p>Méthodes de paiement:</p>
+                        <div class="payments-grid">
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                            <i class="fab fa-cc-paypal"></i>
+                            <img src="assets/images/m-pesa.png" alt="M-Pesa" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 EVI TV - Eagle Vision Install. Tous droits réservés.</p>
+                <div class="footer-links">
+                    <a href="privacy.html">Confidentialité</a>
+                    <a href="terms.html">Conditions d'utilisation</a>
+                    <a href="cookies.html">Cookies</a>
+                    <a href="careers.html">Carrières</a>
+                </div>
+            </div>
         </div>
     </footer>
 
+    <!-- Video.js Script -->
     <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
-    <script src="js/player.js"></script>
+    <!-- Custom Scripts -->
+    <script src="assets/js/player.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/ticker.js"></script>
+    
+    <!-- Trusted Scripts -->
+    <script>
+        // Google Analytics (replace with your ID)
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+        
+        // Cookie Consent
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!localStorage.getItem('cookieConsent')) {
+                // Show cookie banner
+            }
+        });
+    </script>
 </body>
 </html>
